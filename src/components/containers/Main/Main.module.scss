@@ -1,0 +1,88 @@
+@use "sass:map";
+
+@use "../../../styles/variables.scss";
+
+@keyframes moveToTopToCenter {
+  0% {
+    top: calc(50% - 15px);
+  }
+  10% {
+    top: 40px;
+  }
+  90% {
+    top: 40px;
+  }
+  100% {
+    top: calc(50% - 15px);
+  }
+}
+
+@keyframes moveToLeftToCenter {
+  0% {
+    left: calc(50% - 120px);
+  }
+  10% {
+    left: calc(50% + 100px);
+  }
+  90% {
+    left: calc(50% + 100px);
+  }
+  100% {
+    left: calc(50% - 120px);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: map.get(variables.$colors, main-dark-background);
+  height: 100vh;
+
+  .button {
+    position: absolute;
+
+    &--clicked {
+      top: calc(50% - 15px);
+      animation: moveToTopToCenter 5s linear;
+    }
+  }
+
+  .pieChart {
+    display: flex;
+    align-items: flex-end;
+    visibility: hidden;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+      animation: fadeInOut 5s linear;
+    }
+  }
+
+  .currencyDetails {
+    position: absolute;
+    top: calc(50% + 100px);
+    left: calc(50% - 120px);
+
+    &--clicked {
+      animation: moveToLeftToCenter 5s linear;
+    }
+  }
+}

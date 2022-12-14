@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+@use '../../../styles/variables.scss';
+
+.container {
+	height: fit-content;
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-size: 2rem;
+	background-color: map.get(variables.$colors, purples-purple);
+	color: map.get(variables.$colors, whites-white);
+
+	&:hover {
+		background-color: map.get(variables.$colors, purples-light-purple);
+		color: map.get(variables.$colors, whites-ghost-white);
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		background-color: map.get(variables.$colors, purples-light-purple);
+		color: map.get(variables.$colors, whites-ghost-white);
+	}
+}
