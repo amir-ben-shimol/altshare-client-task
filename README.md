@@ -1,4 +1,4 @@
-# Welcome to simple currency fetcer project 👋
+# Welcome to simple currency fetcher project 👋
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
 
